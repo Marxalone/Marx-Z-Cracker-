@@ -2,15 +2,18 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copy requirements first to cache dependencies
+# Set Python path
+ENV PYTHONPATH=/app
+
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the code
+# Copy code
 COPY . .
 
-# Create temp directory
+# Create temp dir
 RUN mkdir -p /app/tmp
 
-# Start both FastAPI and the bot
+# Start services
 CMD sh -c "uvicorn backend.app:app --host 0.0.0.0 --port 8000 & python -m bot.main"
