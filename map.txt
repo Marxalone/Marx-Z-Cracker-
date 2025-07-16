@@ -1,0 +1,19 @@
+zip_cracker_bot/
+├── bot/
+│   ├── __init__.py
+│   ├── main.py          # Telegram bot logic
+│   ├── handlers.py      # Message handlers
+│   └── keyboards.py     # Reply keyboards
+├── backend/
+│   ├── __init__.py
+│   ├── app.py           # FastAPI backend
+│   ├── cracker.py       # ZIP cracking logic
+│   └── models.py        # Data models
+├── tests/
+│   ├── test_cracker.py
+│   └── test_bot.py
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── README.md
+└── .env.example

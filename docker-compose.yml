@@ -1,0 +1,9 @@
+services:
+  bot:
+    build: .
+    env_file: marx.env  # <── Add this line
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    volumes:
+      - ./tmp:/app/tmp
+    restart: unless-stopped
